@@ -7,7 +7,7 @@
 
 * The purpose of this project is to study the coding methodology of discrete sources in Digital Telecommunications that follow Huffman Coding.
 * Our proposed model is able to compress artificial sources (e.g. random generated characters), as well as real-life sources (e.g. files that include English words).
-* The model has been developed using MATLAB programming language. 
+* The model has been developed using `MATLAB` programming language. 
 
 
 
