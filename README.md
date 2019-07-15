@@ -36,8 +36,6 @@
 
     > At first, the **main** function builds `SourceA` and `SourceB` for the simulation.
 
-    > `Bullet 2` refers to the simulation where we create the `huffman_dictionary` with the wikipedia probabilities...
-
     > After creating the `huffman_dictionary`, we then use both `SourceA` and `SourceB` as sources for encoding.
 
     > After encoding both sources into 2 different binary streams, **myHuffmanDecode** function is used to retrieve the initial source message.
