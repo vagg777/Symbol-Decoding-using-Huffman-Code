@@ -45,9 +45,6 @@
     * After creating the `huffman_dictionary`, we then use both `SourceA` and `SourceB` as sources for encoding.
     * After encoding both sources into 2 different binary streams, **myHuffmanDecode** function is used to retrieve the initial source message.
     * If the decoded message is identical with the equivalent source message, the whole procedure is marked as successful.
-    * A typical simulation should look like this:
-
-    ![alt text](https://i.imgur.com/qNVRuZe.png)
     
 
 
@@ -149,3 +146,7 @@
 	- Calculates Average Coding Length
 	- Creates encoding message (as a binary stream) for extended `SourceB`
 	- Decodes message for `SourceB` and validates if the message matches initial extended `SourceB` message
+	
+* A typical simulation should look like this:
+
+    ![alt text](https://i.imgur.com/qNVRuZe.png)
