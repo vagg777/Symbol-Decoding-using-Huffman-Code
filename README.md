@@ -39,7 +39,7 @@
 
 * `MyHuffmanDecode()` function uses as input the `encoded_message` from **myHuffmanEncode** function and the `huffman_dictionary` matrix and reveals the initial string representation of the source.
 
-* **main()** function is the top-level functions that calls the necessary sub-functions mentioned above and initiates the simulation.
+* `main()` function is the top-level functions that calls the necessary sub-functions mentioned above and initiates the simulation.
 
     * At first, the **main** function builds `SourceA` and `SourceB` for the simulation.
     * After creating the `huffman_dictionary`, we then use both `SourceA` and `SourceB` as sources for encoding.
