@@ -13,18 +13,18 @@
 
 ## 2. How is the project structured? ##
 
-* **Source A** is a distinct memory-free source (DMS) that, based on input probabilities, contains random lowercase characters of the English alphabet. Its representation in our code is a table (`1 x 1000`), where in each cell we store the random letter of the alphabet that emerged based on the chances of occurrence. The encoding of `Source A`, since we have already created the Huffman alphabet, is for each different experiment we perform, a binary representation of approximately `42,000` digits (if randomly generated each time, the encoding length for the characters whose binary representation is in the alphabet Huffman is variable in each execution). 
+* `Source A`is a distinct memory-free source (DMS) that, based on input probabilities, contains random lowercase characters of the English alphabet. Its representation in our code is a table (`1 x 1000`), where in each cell we store the random letter of the alphabet that emerged based on the chances of occurrence. The encoding of `Source A`, since we have already created the Huffman alphabet, is for each different experiment we perform, a binary representation of approximately `42,000` digits (if randomly generated each time, the encoding length for the characters whose binary representation is in the alphabet Huffman is variable in each execution). 
     * With an average code length of `4.21 digits/symbol` and `10,000` symbols in `Source A`, having a coded message equal to `42,014` digits is a fully expected result and in theory is completely acceptable. 
     * The decoding of the encoded binary message creates a source, which in each of its positions contains the character of the alphabet for which it found precise encoding in the Huffman alphabet. 
 
-* **Source B** is an information source with data from a text file of `3,857` English words beginning with the character `k`. In order to be able to encode `Source B` correctly, we will need to filter the source information so that uppercase and lowercase characters are not taken into account in creating the final table of `Source B` that we will use, as they do not define binary representation. from the Huffman alphabet table. Source B is therefore a representation of the text file, in which all characters are lowercase (lowercase -> uppercase conversion) and all sorts of special characters are missing, with each position in the final table (`1 x 19,110`) of `Source B` being used for a single character of the English alphabet. The encoding of `Source B`, since we have already created the Huffman alphabet, is for each different experiment we perform, a binary representation of exactly `135,482 ` digits. 
+* `Source B` is an information source with data from a text file of `3,857` English words beginning with the character `k`. In order to be able to encode `Source B` correctly, we will need to filter the source information so that uppercase and lowercase characters are not taken into account in creating the final table of `Source B` that we will use, as they do not define binary representation. from the Huffman alphabet table. Source B is therefore a representation of the text file, in which all characters are lowercase (lowercase -> uppercase conversion) and all sorts of special characters are missing, with each position in the final table (`1 x 19,110`) of `Source B` being used for a single character of the English alphabet. The encoding of `Source B`, since we have already created the Huffman alphabet, is for each different experiment we perform, a binary representation of exactly `135,482 ` digits. 
     * With an average code length of `4,21 digits/symbol` and `29,110` symbols in `Source B`, we should hypothetically have a coded message equal to `122,553` digits, which is a deviation of `12,929` symbols! 
     * Contributing to the increased coding length is the fact that all words start with the character `k`, which according to Wikipedia, has the 22nd worst performance in character probability (equal to `0,77%`) out of a total of 26 characters and in combination with the fact that the Huffman algorithm depicts the most frequently occurring fixed-length output sequences with smaller binary sequences, and the longer binary sequences are used in the less frequently referenced source sequences, the binary representation of the symbol k is `1101100`. 
     * This representation is a representation of `7` digits and so we have a non-optimal character representation in binary format, which in the file given to us, has the maximum probability of occurrence (equal to `15.6%`) and we choose to represent it with a relatively long code length, since the data mining for the odds does not come from a real estimate in the file, but from an external predefined source. 
     * The decoding of the encoded binary message creates a source, which in each of its positions contains the character of the alphabet for which it found precise encoding in the Huffman alphabet.
     
 
-* **MyHuffmanDictionary()** function calculates coding words that Huffman Coding based on an alphabet input as a symbol source and the correspoding probabilities for this source.
+* `MyHuffmanDictionary()` function calculates coding words that Huffman Coding based on an alphabet input as a symbol source and the correspoding probabilities for this source.
 
 	* In the case of randomly generated characters, character probabilities of the English Alphabet derive from here : https://en.wikipedia.org/wiki/Letter_frequency
 	* In the case of english words, probabilities are calculated by reading the external file and calculating character occurances.
@@ -32,12 +32,12 @@
     * In the end, the **MyHuffmanDictionary** functions creates a `huffman_dictionary` matrix that includes alphabet symbols and their binary coding.
 
 
-* **myHuffmanEncode()** function uses as input the equivalent discrete source (e.g. `SourceA` corresponds to randomly generated characters and `SourceB` corresponds to the external file) and the `huffman_dictionary` matrix.
+* `MyHuffmanEncode()` function uses as input the equivalent discrete source (e.g. `SourceA` corresponds to randomly generated characters and `SourceB` corresponds to the external file) and the `huffman_dictionary` matrix.
 
     * The function converts string input into characters and generates an `encoded_message` in binary representation.
     
 
-* **myHuffmanDecode()** function uses as input the `encoded_message` from **myHuffmanEncode** function and the `huffman_dictionary` matrix and reveals the initial string representation of the source.
+* `MyHuffmanDecode()` function uses as input the `encoded_message` from **myHuffmanEncode** function and the `huffman_dictionary` matrix and reveals the initial string representation of the source.
 
 * **main()** function is the top-level functions that calls the necessary sub-functions mentioned above and initiates the simulation.
 
